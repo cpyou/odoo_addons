@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <menuitem id="dormitory_account_menu_root" name="账务管理" sequence="１"/>
+        <menuitem name="账务记录" parent="dormitory_account_menu_root" id="menu_stj_dormitory_account_main" sequence="1"/>
+
+        <record model="ir.ui.view" id="dormitory_account_form_view">
+            <field name="name">dormitory.account</field>
+            <field name="model">dormitory.account</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Dormitory Account Form" version="7.0">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="user_id" />
+                                <field name="cost" />
+                            </group>
+                            <group>
+                                <field name="date" />
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="备注">
+                                <field name="note" />
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="dormitory_account_tree_view">
+            <field name="name">dormitory.account</field>
+            <field name="model">dormitory.account</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <form string="Dormitory Account Tree" version="7.0">
+                    <field name="user_id" />
+                    <field name="cost" />
+                    <field name="note" />
+                    <field name="date" />
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="dormitory_account_action">
+            <field name="name">宿舍账务管理</field>
+            <field name="res_model">dormitory.account</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{}</field>
+        </record>
+        <menuitem name="账务记录" parent="menu_stj_dormitory_account_main" id="dormitory_account_menu" action="dormitory_account_action" sequence="1"/>
+
+    </data>
+</openerp>
