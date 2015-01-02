@@ -9,7 +9,7 @@
             <field name="model">dormitory.account</field>
             <field name="type">form</field>
             <field name="arch" type="xml">
-                <form string="Dormitory Account Form" version="7.0">
+                <form string="Dormitory Account Form">
                     <sheet>
                         <group>
                             <group>
@@ -35,12 +35,12 @@
             <field name="model">dormitory.account</field>
             <field name="type">tree</field>
             <field name="arch" type="xml">
-                <form string="Dormitory Account Tree" version="7.0">
+                <tree string="Dormitory Account Tree">
                     <field name="user_id" />
-                    <field name="cost" />
+                    <field name="cost" sum="" />
                     <field name="note" />
                     <field name="date" />
-                </form>
+                </tree>
             </field>
         </record>
 
