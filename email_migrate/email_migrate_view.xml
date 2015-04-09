@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data>
-        <menuitem id="dormitory_account_menu_root" name="邮件迁移" sequence="１"/>
-        <menuitem id="menu_stj_dormitory_account_main" name="账务记录" parent="email_migrate_menu_root"  sequence="1"/>
+        <menuitem id="email_migrate_menu_root" name="邮件迁移" sequence="2"/>
+        <menuitem id="menu_stj_dormitory_account_main" name="邮件迁移" parent="email_migrate_menu_root"  sequence="1"/>
 
         <record id="migrate_user_view_form" model="ir.ui.view">
             <field name="name">migrate.user.form</field>
             <field name="model">migrate.user</field>
             <field name="type">form</field>
             <field name="arch" type="xml">
-                <form string="邮箱用户">
-                    <group colspan="4">
-                        <field name="email_server" />
-                        <field name="old_email_address" />
-                        <field name="new_email_address" />
-                        <field name="handling_server" />
-                        <field name="messages" />
-                    </group>
+                <form string="migrate user">
+                    <sheet>
+                        <group col="4">
+                            <field name="email_server" />
+                            <field name="old_email_address" />
+                            <field name="new_email_address" />
+                            <field name="handling_server" />
+                            <field name="messages" />
+                        </group>
+                    </sheet>
                 </form>
             </field>
         </record>
@@ -26,24 +28,24 @@
             <field name="model">migrate.user</field>
             <field name="type">tree</field>
             <field name="arch" type="xml">
-                <form string="邮箱用户">
-                    <group colspan="4">
-                        <field name="email_server" />
-                        <field name="old_email_address" />
-                        <field name="new_email_address" />
-                        <field name="handling_server" />
-                        <field name="messages" />
-                    </group>
-                </form>
+                <tree string="migrate user">
+                    <field name="email_server" />
+                    <field name="old_email_address" />
+                    <field name="new_email_address" />
+                    <field name="handling_server" />
+                    <field name="messages" />
+                </tree>
             </field>
         </record>
 
         <record id="migrate_user_action" model="ir.actions.act_window">
-            <field name="name">migrate.user.action</field>
+            <field name="name">邮件用户</field>
             <field name="res_model">migrate.user</field>
-            <field name="view_type">tree,form</field>
-            <field name="domain">[]</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
         </record>
-        <menuitem id="migrate_user_menu" name="账务记录" parent="menu_stj_dormitory_account_main"  sequence="1"/>
+
+        <menuitem name="邮件用户" parent="menu_stj_dormitory_account_main"
+                  id="migrate_user_menu" action="migrate_user_action" sequence="1"/>
     </data>
 </openerp>
