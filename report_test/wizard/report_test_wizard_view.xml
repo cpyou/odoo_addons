@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+        <record id="view_report_test" model="ir.ui.view">
+            <field name="name">报表测试</field>
+            <field name="model">report.test.wizard</field>
+            <field name="arch" type="xml">
+               <form string="报表测试">
+                    <group>
+                        <group>
+                            <field name="from_date"/>
+                            <field name="to_date"/>
+                        </group>
+                        
+                    </group>
+                 <footer>
+                    <button name="report_print" string="打印" type="object" class="oe_highlight"/>
+                    or
+                    <button string="取消" class="oe_link" special="cancel" />
+                 </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_report_test" model="ir.actions.act_window">
+            <field name="name">报表测试</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">report.test.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_report_test"/>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="menu_preport_root" name="报表" sequence="4"/>
+        <menuitem id="menu_preport_main" name="报表" parent="menu_preport_root" sequence="4"/>
+        <menuitem id="menu_action_report_test" name="报表测试" action="action_report_test" parent="menu_preport_main" sequence="0"/>
+</data>
+</openerp>
