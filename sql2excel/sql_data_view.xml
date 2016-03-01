@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- sql数据 tree -->
+        <record id="view_sql_data_tree" model="ir.ui.view">
+            <field name="name">sql数据</field>
+            <field name="model">sql.data</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+               <tree string="sql数据">
+                    <field name="name"/>
+                    <field name="header"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- sql数据 form -->
+        <record id="view_sql_data_form" model="ir.ui.view">
+            <field name="name">sql数据</field>
+            <field name="model">sql.data</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+               <form string="sql数据">
+                   <sheet>
+                       <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="header"/>
+                            </group>
+                        </group>
+                       <notebook>
+                           <page string="sql语句">
+                               <field name="sql"/>
+                           </page>
+                           <page string="描述">
+                               <field name="description"/>
+                           </page>
+                       </notebook>
+                   </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_report_sql_data" model="ir.actions.act_window">
+            <field name="name">sql数据</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sql.data</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</openerp>

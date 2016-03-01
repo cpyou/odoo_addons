@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <menuitem id="menu_preport_root" name="报表" sequence="4"/>
+        <menuitem id="menu_preport_main" name="报表" parent="menu_preport_root" sequence="4"/>
+        <menuitem id="menu_action_report_sql_to_excel" name="sql报表" action="action_report_sql_to_excel" parent="menu_preport_main" sequence="0"/>
+        <menuitem id="menu_action_report_data" name="sql数据" action="action_report_sql_data" parent="menu_preport_main" sequence="1"/>
+    </data>
+</openerp>
