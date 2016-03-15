@@ -22,6 +22,9 @@
             <field name="type">form</field>
             <field name="arch" type="xml">
                <form string="sql数据">
+                    <header>
+                        <button string="打印Excel" name="report_print" type="object"/>
+                    </header>
                    <sheet>
                        <group>
                             <group>

@@ -31,7 +31,6 @@
     'depends': ['base'],
     'data': [
         'sql_data_view.xml',
-        'wizard/sql2excel_wizard_view.xml',
         'menu_view.xml',
     ],
     'active': False,
